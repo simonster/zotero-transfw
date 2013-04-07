@@ -199,7 +199,7 @@ FW._Scraper = function (init) {
         } else if (typeof config === 'object') {
             /* plural or singual */
             var urlsFilter = config["urls"] || config["url"];
-            var typesFilter = config["types"] || config["type"];
+            var typesFilter = config["mimeTypes"] || config["mimeType"] || config["types"] || config["type"];
             var titlesFilter = config["titles"] || config["title"];
             var snapshotsFilter = config["snapshots"] || config["snapshot"];
 
@@ -227,7 +227,7 @@ FW._Scraper = function (init) {
 
                 item["attachments"].push({ url      : attachUrl,
                                            title    : attachTitle,
-                                           type     : attachType,
+                                           mimeType : attachType,
                                            snapshot : attachSnapshot });
             }
         }
